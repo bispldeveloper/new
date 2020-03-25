@@ -1,4 +1,4 @@
-<?php namespace Eyeweb\MissionControl\Console;
+<?php namespace EyeCore\Console;
 
 use Illuminate\Console\Command;
 use Spatie\Sitemap\SitemapGenerator;
