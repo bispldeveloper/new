@@ -1,0 +1,20 @@
+span {
+	&.primary {
+		color: $blue;
+	}
+	&.secondary {
+		color: $dark-grey;
+	}
+	&.info {
+		color: $blue;
+	}
+	&.alert {
+		color: $red;
+	}
+	&.warning {
+		color: $yellow;
+	}
+	&.success {
+		color: $green;
+	}
+}

@@ -1,0 +1,50 @@
+/**
+ * Foundation for Sites
+ * http://foundation.zurb.com/sites/docs
+ */
+$xy-grid: false;
+@import "~foundation-sites/scss/foundation";
+@include foundation-everything(true, true);
+/**
+ * Font Awesome
+ * http://fontawesome.com
+ */
+$fa-font-path: "../webfonts";
+@import "~@fortawesome/fontawesome-pro/scss/fontawesome";
+@import "~@fortawesome/fontawesome-pro/scss/solid";
+@import "~@fortawesome/fontawesome-pro/scss/light";
+@import "~@fortawesome/fontawesome-pro/scss/regular";
+@import "~@fortawesome/fontawesome-pro/scss/brands";
+/**
+ * Motion UI
+ * https://github.com/zurb/motion-ui/
+ */
+@import "~motion-ui/src/motion-ui";
+@include motion-ui-transitions;
+@include motion-ui-animations;
+/**
+ * Spectrum
+ * https://github.com/bgrins/spectrum
+ */
+@import "~spectrum-colorpicker/spectrum";
+/**
+ * DateRangePicker
+ * https://github.com/dangrossman/bootstrap-daterangepicker
+ */
+@import "~daterangepicker/daterangepicker";
+/**
+ * Nestable
+ * https://github.com/dbushell/Nestable
+ */
+@import "external/nestable/nestable";
+/**
+ * Lightcase
+ * http://cornel.bopp-art.com/lightcase/
+ */
+$lightcase-custom: (
+		"font-path": "~lightcase/src/fonts/"
+);
+@import "~lightcase/src/scss/lightcase";
+
+
+@import "~select2/dist/css/select2.min.css";

@@ -1,0 +1,101 @@
+.button {
+	&.primary {
+		color: $white;
+		border-color: darken($primary-color, 5);
+		&:hover,
+		&:focus {
+			color: $white;
+		}
+	}
+	&.secondary {
+		color: $white;
+		border-color: darken($secondary-color, 5);
+		&:hover,
+		&:focus {
+			color: $white;
+		}
+	}
+	&.info {
+		color: $white;
+		border-color: darken($blue, 5);
+		&:hover,
+		&:focus {
+			color: $white;
+		}
+	}
+	&.alert {
+		color: $white;
+		border-color: darken($alert-color, 5);
+		&:hover,
+		&:focus {
+			color: $white;
+		}
+	}
+	&.warning {
+		color: $black;
+		border-color: darken($warning-color, 5);
+		&:hover,
+		&:focus {
+			color: $black;
+		}
+	}
+	&.success {
+		color: $white;
+		border-color: darken($success-color, 5);
+		&:hover,
+		&:focus {
+			color: $white;
+		}
+	}
+}
+
+.icon-button {
+	padding: rem-calc(0 1 0 1);
+	display: inline-block;
+	margin-right: rem-calc(5);
+	i {
+		font-size: rem-calc(18);
+		transition: color 0.3s ease-in-out;
+	}
+	&.alert {
+		color: $red;
+		&:hover,
+		&:focus {
+			color: darken($red, 10);
+		}
+	}
+	&.success {
+		color: $green;
+		&:hover,
+		&:focus {
+			color: darken($green, 10);
+		}
+	}
+	&.primary {
+		color: $blue;
+		&:hover,
+		&:focus {
+			color: darken($blue, 10);
+		}
+	}
+	&.secondary {
+		color: $grey;
+		&:hover,
+		&:focus {
+			color: darken($grey, 10);
+		}
+	}
+	&.warning {
+		color: $yellow;
+		&:hover {
+			color: darken($yellow, 10);
+		}
+	}
+	&.info {
+		color: $blue;
+		&:hover,
+		&:focus {
+			color: darken($blue, 10);
+		}
+	}
+}

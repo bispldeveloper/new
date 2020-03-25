@@ -1,0 +1,98 @@
+.title-bar {
+	.title-bar-left {
+		.title-bar-title {
+			a {
+				img {
+					width: auto;
+					height: rem-calc(40);
+				}
+			}
+		}
+	}
+}
+.top-bar {
+	background-color: $black;
+	padding-top: 0;
+	padding-bottom: 0;
+	position: relative;
+	height: rem-calc(60);
+	z-index: 10;
+	ul.dropdown.menu {
+		background-color: $black;
+		li.logo {
+			text-align: center;
+			width: rem-calc(240);
+			> a {
+				img {
+					width: auto;
+					height: rem-calc(40);
+				}
+			}
+		}
+		> li {
+			> a {
+				padding-top: 0;
+				padding-bottom: 0;
+				line-height: rem-calc(60);
+				color: $white;
+				font-size: rem-calc(14);
+				font-weight: 500;
+			}
+			&:hover {
+				a {
+					color: $yellow;
+				}
+			}
+			&.is-dropdown-submenu-parent {
+				position: relative;
+				z-index: 999999 !important;
+				> a {
+					&:after {
+						border: none;
+						content: "\f0dd";
+						font-family: "Font Awesome 5 Pro";
+						position: absolute;
+						right: rem-calc(17);
+						font-size: rem-calc(18);
+						top: 0;
+						color: $white;
+						font-weight: 600;
+					}
+				}
+				&:hover,
+				&:visited {
+					> a {
+						&:after {
+							border: none;
+							color: $yellow;
+						}
+					}
+				}
+			}
+			ul.is-dropdown-submenu {
+				background-color: $black;
+				border: none;
+				z-index: -1;
+				li.is-submenu-item {
+					text-align: right;
+					a {
+						color: $white;
+						font-size: rem-calc(14);
+						line-height: 1;
+						padding: rem-calc(10 15);
+					}
+					&:hover {
+						a {
+							color: $yellow;
+						}
+					}
+					&.active {
+						a {
+							color: $yellow;
+						}
+					}
+				}
+			}
+		}
+	}
+}

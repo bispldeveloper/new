@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+// Settings
+@import "settings/typography";
+@import "settings/colors";
+@import "partials/forms";
+@import "settings/foundation";
+
+// Vendor Libraries
+@import "vendor";
+
+// Partials
+@import "partials/label";
+@import "partials/spans";
+@import "partials/buttons";
+@import "partials/offcanvas";
+@import "partials/top-bar";
+@import "partials/forms";
+@import "partials/table";
+@import "partials/alerts";
+@import "partials/modals";
+@import "partials/pagination";
+@import "partials/marketing-reports";
+
+// Blocks
+@import "blocks/button-block";
+@import "blocks/content-block";
+@import "blocks/table-block";
+@import "blocks/tab-block";
+
+// Prototyping
+@import "partials/prototyping";
+
+// Import Core Styles
+@import '../../../../../../../../**/src/Modules/**/Resources/Assets/Admin/sass/**/!(app|vendor).scss';
+
+// Import Custom Styles
+@import '../../../../../../../../../../modules/**/Resources/Assets/Admin/sass/**/*.scss';

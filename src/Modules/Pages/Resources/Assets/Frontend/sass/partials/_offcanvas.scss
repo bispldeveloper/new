@@ -1,0 +1,65 @@
+.off-canvas {
+	ul.vertical.menu {
+		background: $off-canvas-bg-color;
+		li {
+			a {
+				color: $off-canvas-link-color;
+				font-weight: $off-canvas-link-font-weight;
+				font-size: $off-canvas-link-font-size;
+				text-transform: $off-canvas-link-text-transform;
+				letter-spacing: $off-canvas-link-letter-spacing;
+			}
+			&.is-drilldown-submenu-parent {
+				> a {
+					&:after {
+						@if not $off-canvas-font-awesome-arrows {
+							border-color: transparent transparent transparent $off-canvas-link-arrow-color;
+						} @else {
+							border: none;
+							color: $off-canvas-link-arrow-color;
+							font-family: "Font Awesome 5 Pro";
+							content: $off-canvas-font-awesome-arrow-icon;
+							right: rem-calc(20);
+						}
+					}
+				}
+			}
+			&.js-drilldown-back {
+				a {
+					padding-left: rem-calc(40);
+					&:before {
+						@if not $off-canvas-font-awesome-arrows {
+							border-color: transparent $off-canvas-link-back-arrow-color transparent transparent;
+						} @else {
+							border: none;
+							color: $off-canvas-link-back-arrow-color;
+							font-family: "Font Awesome 5 Pro";
+							content: $off-canvas-font-awesome-back-arrow-icon;
+							position: absolute;
+							left: rem-calc(15);
+						}
+					}
+				}
+			}
+			&.active {
+				> a {
+					color: $off-canvas-link-color-active;
+					background: $off-canvas-link-bg-color-active;
+					&:focus,
+					&:active {
+						outline: none;
+					}
+				}
+			}
+		}
+	}
+	@if not $off-canvas-shadow-show {
+		&.position-right::after,
+		&.position-left::after,
+		&.position-top::after,
+		&.position-bottom::after,
+		&.is-transition-overlap {
+			box-shadow: none !important;
+		}
+	}
+}

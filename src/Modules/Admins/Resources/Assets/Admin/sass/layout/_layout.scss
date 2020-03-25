@@ -1,0 +1,150 @@
+html {
+	overflow: hidden;
+	height: 100%;
+}
+
+body,
+.off-canvas,
+.off-canvas-wrapper,
+.off-canvas-content {
+	height: 100%;
+}
+
+#dashboard {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	&-body {
+		&-header {
+			&-banner {
+				width: 100%;
+				background-color: $black;
+				background-size: cover;
+				background-repeat: no-repeat;
+				padding: rem-calc(90 27);
+				background-position: center center;
+				h2 {
+					color: $white;
+					margin-bottom: 0;
+					font-weight: normal;
+					font-size: rem-calc(45);
+				}
+				p {
+					color: $white;
+					font-weight: normal;
+				}
+			}
+		}
+		&-sidebar {
+			&-inner {
+				padding-bottom: rem-calc(100);
+			}
+		}
+		&-content {
+			padding: rem-calc(15 0);
+			height: 100%;
+			width: 100%;
+			overflow-y: auto;
+			&-inner {
+				margin-bottom: rem-calc(150);
+				.module-header {
+					p.module-title {
+						margin-bottom: rem-calc(10);
+						font-weight: 500;
+						font-size: rem-calc(22);
+						padding: rem-calc(2 0);
+					}
+					.dropdown-pane {
+						background-color: $white;
+						ul {
+							li {
+								a {
+									color: $black;
+									font-size: rem-calc(14);
+								}
+							}
+						}
+					}
+					ul.button-list {
+						margin-left: 0;
+						list-style: none;
+						li {
+							display: inline-block;
+						}
+					}
+					ul.link-list {
+						margin-left: 0;
+						list-style: none;
+						li {
+							display: inline-block;
+							padding: rem-calc(0 15);
+							position: relative;
+							&:first-of-type {
+								padding-left: 0;
+								&:before {
+									width: 0 !important;
+								}
+							}
+							&:last-of-type {
+								padding-right: 0;
+							}
+							&:before {
+								content: '';
+								position: absolute;
+								height: rem-calc(20);
+								width: rem-calc(1);
+								background-color: $grey;
+								left: rem-calc(-2);
+								top: rem-calc(3);
+							}
+							a {
+								color: $dark-grey;
+								font-weight: 500;
+								font-size: rem-calc(14);
+								display: initial;
+								padding: 0;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@include breakpoint('medium') {
+	#dashboard {
+		&-body {
+			&-content {
+				&-inner {
+					padding: rem-calc(27 18);
+					p.module-title {
+						margin-bottom: 0;
+					}
+					.module-header {
+						.dropdown-pane {
+							ul {
+								li {
+									a:hover {
+										text-decoration: underline;
+									}
+								}
+							}
+						}
+						ul.button-list,
+						ul.link-list {
+							margin-top: 0;
+							float: right;
+							li {
+								.button {
+									margin-bottom: 0;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+

@@ -1,0 +1,49 @@
+.off-canvas {
+	box-shadow: none !important;
+	background-color: $white;
+	border-right: rem-calc(0.5) solid $grey;
+	padding: rem-calc(19 10 75 10);
+	.nav-block {
+		margin-bottom: rem-calc(15);
+		p.title {
+			font-size: rem-calc(16);
+			color: $black;
+			margin-bottom: rem-calc(10);
+			font-weight: 500;
+			padding: rem-calc(0 5);
+		}
+		ul.menu.vertical {
+			li {
+				margin-bottom: 0;
+				a {
+					padding: rem-calc(9 8);
+					font-size: rem-calc(14);
+					color: $dark-grey;
+					border-radius: $global-radius;
+					i {
+						margin-right: rem-calc(5);
+						font-size: rem-calc(15);
+						width: rem-calc(20);
+					}
+					&:hover {
+						background-color: $light-grey-1;
+					}
+					&.active {
+						background-color: $black;
+						color: $white;
+						i {
+							color: $yellow;
+						}
+					}
+				}
+			}
+		}
+	}
+	&.position-right::after,
+	&.position-left::after,
+	&.position-top::after,
+	&.position-bottom::after,
+	&.is-transition-overlap {
+		box-shadow: none !important;
+	}
+}

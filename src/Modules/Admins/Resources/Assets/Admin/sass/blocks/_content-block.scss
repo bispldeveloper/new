@@ -1,0 +1,47 @@
+.content-block {
+	background-color: $white;
+	padding: rem-calc(20);
+	margin-bottom: rem-calc(27);
+	border: rem-calc(1) solid $grey;
+	&-title {
+		font-size: rem-calc(20);
+		font-weight: 500;
+		color: $black;
+		margin-bottom: 0;
+		position: relative;
+		.expand-collapse {
+			float: right;
+			position: relative;
+			height: rem-calc(20);
+			width: rem-calc(20);
+			&:after {
+				content: "\f056";
+				height: rem-calc(20);
+				width: rem-calc(20);
+				position: absolute;
+				top: 0;
+				left: 0;
+				color: darken($yellow, 5);
+				font-family: "Font Awesome 5 Pro";
+			}
+			&.collapsed {
+				&:after {
+					content: "\f055";
+				}
+			}
+		}
+	}
+	&-subtitle {
+		font-size: rem-calc(16);
+		font-weight: 500;
+		color: $black;
+		margin-bottom: rem-calc(15);
+		position: relative;
+	}
+	.button {
+		margin-bottom: 0 !important;
+	}
+	.content {
+		padding-top: rem-calc(15);
+	}
+}

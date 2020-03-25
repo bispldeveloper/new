@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+// Import Foundation utilities
+@import "~foundation-sites/scss/util/util";
+
+// Settings
+@import "../../../../../../../../../../modules/Pages/Resources/Assets/Frontend/sass/settings/typography";
+@import "../../../../../../../../../../modules/Pages/Resources/Assets/Frontend/sass/settings/colours";
+@import "../../../../../../../../../../modules/Pages/Resources/Assets/Frontend/sass/settings/forms";
+@import "../../../../../../../../../../modules/Pages/Resources/Assets/Frontend/sass/settings/offcanvas";
+@import "../../../../../../../../../../modules/Pages/Resources/Assets/Frontend/sass/settings/foundation";
+
+// Vendor Libraries
+@import "vendor";
+
+// Partials
+@import "partials/forms";
+@import "partials/offcanvas";
+
+// Import Core Styles
+@import '../../../../../../../../**/src/Modules/**/Resources/Assets/Frontend/sass/**/!(app|vendor).scss';
+
+// Import Custom Styles
+@import '../../../../../../../../../../modules/**/Resources/Assets/Frontend/sass/**/*.scss';

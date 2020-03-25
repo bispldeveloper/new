@@ -1,0 +1,42 @@
+.alerts {
+	&.callout {
+		width: 100%;
+		margin-bottom: 0;
+		padding-left: rem-calc(27);
+		padding-right: rem-calc(27);
+		border-radius: 0;
+		.close-button {
+			color: $white;
+			top: rem-calc(13);
+			right: rem-calc(27);
+		}
+		p {
+			color: $white;
+			margin-bottom: 0;
+			font-weight: 500;
+			a {
+				color: $white;
+				text-decoration: underline;
+				&:hover {
+					text-decoration: none;
+				}
+			}
+		}
+		&.success {
+			background-color: $green;
+			border: darken($green, 5);
+		}
+		&.warning {
+			background-color: darken($yellow, 5);
+			border: darken($yellow, 15);
+		}
+		&.info {
+			background-color: $blue;
+			border: darken($blue, 5);
+		}
+		&.alert {
+			background-color: $red;
+			border: darken($red, 5);
+		}
+	}
+}

@@ -1,0 +1,37 @@
+
+/**
+ * Foundation for Sites
+ * http://foundation.zurb.com/sites/docs
+ */
+$xy-grid: false;
+@import "~foundation-sites/scss/foundation";
+@include foundation-everything(true);
+
+/**
+ * Font Awesome
+ * http://fontawesome.com
+ */
+$fa-font-path: "../webfonts";
+@import "~@fortawesome/fontawesome-pro/scss/fontawesome";
+@import "~@fortawesome/fontawesome-pro/scss/solid";
+@import "~@fortawesome/fontawesome-pro/scss/light";
+@import "~@fortawesome/fontawesome-pro/scss/regular";
+@import "~@fortawesome/fontawesome-pro/scss/brands";
+
+/**
+ * Lightcase
+ * http://cornel.bopp-art.com/lightcase/
+ */
+$lightcase-custom: (
+    "font-path": "~lightcase/src/fonts/"
+);
+@import "~lightcase/src/scss/lightcase";
+
+/**
+ * Slick.js
+ * http://kenwheeler.github.io/slick/
+ */
+$slick-font-path: "~slick-carousel/slick/fonts/";
+$slick-loader-path: "~slick-carousel/slick/";
+@import "~slick-carousel/slick/slick";
+@import "~slick-carousel/slick/slick-theme";

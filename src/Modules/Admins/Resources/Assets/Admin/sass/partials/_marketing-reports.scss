@@ -1,0 +1,17 @@
+p {
+	&.stat-title {
+		font-weight: 700;
+		margin-bottom: rem-calc(5);
+	}
+	&.stat-value {
+		&.positive i {
+			color: $green;
+		}
+		&.neutral i {
+			color: $yellow;
+		}
+		&.negative i {
+			color: $red;
+		}
+	}
+}

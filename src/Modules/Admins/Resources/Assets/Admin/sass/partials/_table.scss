@@ -1,0 +1,137 @@
+@media screen and (max-width: 1024px) {
+	table.data-table {
+		border-collapse: collapse;
+		margin-bottom: 0;
+		thead {
+			border-bottom: none;
+			tr {
+				position: absolute;
+				top: -9999em;
+				left: -9999em;
+				th {
+					font-size: rem-calc(14);
+				}
+			}
+		}
+		tbody {
+			border: none;
+			tr:not(.no-results) {
+				display: block;
+				border: none;
+				border-top: rem-calc(1) solid $grey;
+				+ tr {
+					margin-top: rem-calc(20);
+				}
+				&:first-of-type {
+					border-top: none;
+				}
+				&:last-of-type {
+					border-bottom: none;
+					td:nth-last-child(-n+1) {
+						border-bottom: none;
+					}
+				}
+				td {
+					border: none;
+					padding-left: 50%;
+					position: relative;
+					font-weight: 400;
+					font-size: rem-calc(14);
+					padding-top: rem-calc(10);
+					padding-bottom: rem-calc(10);
+					border-bottom: rem-calc(1) solid $grey;
+					display: block;
+					word-break: break-word;
+					&:before {
+						content: attr(data-label);
+						display: inline-block;
+						font-weight: 600;
+						line-height: 1.5;
+						margin-left: -100%;
+						width: 98%;
+						position: relative;
+						z-index: 1;
+					}
+					&:after {
+						content: '';
+						position: absolute;
+						width: 45%;
+						height: 98%;
+						left: rem-calc(1);
+						top: rem-calc(1);
+						z-index: 0;
+						background: $light-grey;
+					}
+					input,
+					.button {
+						margin-bottom: 0 !important;
+					}
+				}
+			}
+			tr.no-results {
+				text-align: center;
+				border-bottom: none;
+				td {
+					font-weight: 400;
+					font-size: rem-calc(14);
+					padding-top: rem-calc(10);
+					padding-bottom: rem-calc(10);
+				}
+			}
+		}
+	}
+}
+@include breakpoint('large') {
+	table.data-table {
+		margin-bottom: 0;
+		thead {
+			border-left: none;
+			border-right: none;
+			border-bottom: none;
+			tr {
+				th {
+					font-size: rem-calc(14);
+					&:first-of-type {
+						padding-left: rem-calc(27);
+					}
+					&:last-of-type {
+						padding-right: rem-calc(27);
+					}
+				}
+			}
+		}
+		tbody {
+			border-left: none;
+			border-right: none;
+			border-bottom: none;
+			tr {
+				&:last-of-type {
+					border-bottom: 0;
+				}
+				&.no-results {
+					text-align: center;
+				}
+				&:not(.no-results):hover {
+					td {
+						background-color: #F4F6F8;
+					}
+				}
+				td {
+					padding-top: rem-calc(10);
+					padding-bottom: rem-calc(10);
+					font-size: rem-calc(14);
+					&:first-of-type {
+						padding-left: rem-calc(27);
+					}
+					&:last-of-type {
+						padding-right: rem-calc(27);
+					}
+					input,
+					.button {
+						margin-bottom: 0 !important;
+					}
+				}
+			}
+		}
+	}
+}

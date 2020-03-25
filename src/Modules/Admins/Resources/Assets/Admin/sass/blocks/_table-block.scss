@@ -1,0 +1,24 @@
+
+.table-block {
+	background-color: $white;
+	border: rem-calc(1) solid $grey;
+	margin-bottom: rem-calc(27);
+	&-title {
+		font-size: rem-calc(20);
+		font-weight: 500;
+		color: $black;
+		margin: 0;
+	}
+	&-header {
+		padding: rem-calc(20);
+		select,
+		input,
+		button,
+		.button {
+			margin-bottom: 0;
+		}
+	}
+	&-content {
+
+	}
+}

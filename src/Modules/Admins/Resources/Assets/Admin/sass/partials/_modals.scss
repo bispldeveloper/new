@@ -1,0 +1,16 @@
+.reveal {
+	.content-block {
+		padding: 0;
+		border: none;
+		margin-bottom: 0;
+		&-title {
+			font-size: rem-calc(20);
+			font-weight: 500;
+			color: $black;
+			margin-bottom: 0;
+		}
+		.button {
+			margin-bottom: 0 !important;
+		}
+	}
+}

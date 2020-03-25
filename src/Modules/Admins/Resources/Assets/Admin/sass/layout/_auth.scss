@@ -1,0 +1,55 @@
+#auth-body {
+	background-color: #272625;
+	height: 100vh;
+	> .row {
+		width: 100%;
+	}
+	#image-container {
+		height: 100vh;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center right;
+	}
+	#form-container {
+		height: 100vh;
+		background-color: #fff;
+		display: flex;
+		align-items: center;
+		padding: rem-calc(0 40);
+		@include breakpoint(large) {
+			padding: rem-calc(0 65);
+		}
+		.content {
+			width: 100%;
+			.form-header {
+				margin: rem-calc(70 0 40);
+				p.title {
+					font-size: rem-calc(35);
+					font-weight: 600;
+					margin-bottom: rem-calc(0);
+				}
+				p.subtitle {
+					font-size: rem-calc(20);
+				}
+			}
+			.form-holder {
+				.alerts {
+					margin-bottom: rem-calc(20);
+				}
+				input:not([type='checkbox']):not([type='radio']) {
+					height: rem-calc(50);
+				}
+			}
+			.form-footer {
+				text-align: center;
+				border-top: rem-calc(1) solid #C4CDD5;
+				padding: rem-calc(20 0);
+				margin: rem-calc(15 0);
+				a {
+					color: #272625;
+					font-size: rem-calc(14);
+				}
+			}
+		}
+	}
+}

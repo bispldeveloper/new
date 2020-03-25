@@ -1,0 +1,49 @@
+.tab-block {
+	background-color: $white;
+	margin-bottom: rem-calc(27);
+	border: rem-calc(1) solid $grey;
+	&-title {
+		font-size: rem-calc(20);
+		font-weight: 500;
+		color: $black;
+		margin-bottom: rem-calc(15);
+		position: relative;
+	}
+	ul.tabs {
+		padding: 0 rem-calc(18) !important;
+		border-color: $grey;
+		border-right: none;
+		border-left: none;
+		border-top: none;
+		li.tabs-title {
+			> a {
+				font-weight: 500;
+				color: $grey;
+				font-size: rem-calc(14);
+				transition: color 0.5s;
+				padding: rem-calc(20 10);
+				&:hover {
+					color: $blue;
+				}
+				&:focus {
+					outline: none;
+					background: transparent;
+				}
+			}
+			> a[aria-selected='true'] {
+				color: $blue;
+				background-color: transparent;
+			}
+		}
+	}
+	.tabs-content {
+		padding: rem-calc(20) !important;
+		border: none;
+		.tabs-panel {
+			padding: 0 !important;
+		}
+	}
+	.button {
+		margin-bottom: 0 !important;
+	}
+}

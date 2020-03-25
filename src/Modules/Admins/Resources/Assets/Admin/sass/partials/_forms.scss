@@ -1,0 +1,116 @@
+select {
+	background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' width='32' height='24' viewBox='0 0 32 24'><polygon points='0,0 32,0 16,24' style='fill: rgb%28138, 138, 138%29'></polygon></svg>") right 1rem center no-repeat, linear-gradient(#fff 0%, #f9fafb 100%);
+	background-origin: border-box;
+	background-size: rem-calc(9 6), auto;
+}
+
+.input-group {
+	.input-group-field {
+		border-right: 0;
+	}
+	.input-group-button {
+		.button {
+			border-left: 0;
+			border-top-left-radius: 0 !important;
+			border-bottom-left-radius: 0 !important;
+		}
+	}
+}
+
+.mce-tinymce {
+	margin-bottom: rem-calc(15) !important;
+}
+
+#search-block {
+	position: relative;
+	ul.ui-autocomplete {
+		display: none;
+		position: absolute;
+		top: rem-calc(37) !important;
+		left: 0px;
+		background-color: #fff;
+		width: 100% !important;
+		margin: 0;
+		z-index: 9999;
+		border-bottom-left-radius: 5px;
+		border-bottom-right-radius: 5px;
+		border: rem-calc(1) solid #cacaca;;
+		list-style: none;
+		text-align: left;
+		padding: rem-calc(5);
+		font-size: rem-calc(14);
+		li {
+			cursor: pointer;
+			&:hover {
+				color: $blue;
+			}
+		}
+	}
+}
+
+.ui-helper-hidden-accessible {
+	display: none;
+}
+
+.select2-container--default {
+	margin-bottom: rem-calc(16);
+	width: 100% !important;
+	.select2-dropdown {
+		border-color: #cacaca;
+		.select2-search {
+			input {
+				margin-bottom: 0;
+				border-color: #cacaca;
+			}
+		}
+	}
+	&.select2-container--focus {
+		.select2-selection--single, .select2-selection--multiple {
+			border: 1px solid #cacaca;
+		}
+	}
+}
+.select2-container {
+	.select2-selection--single, .select2-selection--multiple {
+		border: 1px solid #cacaca;
+		box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+	}
+}
+
+.select2-container {
+	margin-bottom: rem-calc(16);
+	&.select2-container--focus {
+		.select2-selection--single, .select2-selection--multiple {
+			border: 1px solid #cacaca;
+		}
+	}
+	.select2-selection--single, .select2-selection--multiple {
+		border: 1px solid #cacaca;
+		border-radius: 0.3125rem;
+		background-color: #fff;
+		box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+		padding: 0.5rem;
+		.select2-selection__arrow {
+			height: 2.25rem;
+		}
+		.select2-selection__rendered {
+			line-height: 1rem;
+			padding-left: 0;
+			color: #000;
+			.select2-selection__choice {
+				line-height: 1.6;
+			}
+			input {
+				margin: 0;
+			}
+		}
+	}
+	.select2-selection--single {
+		height: 2.25rem;
+	}
+	.select2-search--dropdown {
+		.select2-search__field {
+			margin-bottom: 0;
+		}
+	}
+}
