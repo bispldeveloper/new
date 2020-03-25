@@ -5,7 +5,8 @@ use Spatie\Sitemap\SitemapGenerator;
 
 /**
  * Class GenerateSitemap
- * @package Eyeweb\MissionControl\Console
+ *
+ * @package EyeCore\Console
  */
 class GenerateSitemap extends Command
 {

@@ -4,7 +4,6 @@ use App\Http\Controllers\Controller;
 use EyeCore\Modules\Images\Models\Image;
 use EyeCore\Modules\Images\Repositories\ImageRepository;
 use EyeCore\Modules\Images\Requests\ImageAttachRequest;
-use MissionControl\Images\Modules\Images\Requests\ImageUploadRequest;
 
 /**
  * Class AdminImageController

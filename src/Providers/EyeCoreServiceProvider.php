@@ -8,10 +8,10 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 
 /**
- * Class MissionControlServiceProvider
+ * Class EyeCoreServiceProvider
  * @package EyeCore\Providers
  */
-class MissionControlServiceProvider extends ServiceProvider
+class EyeCoreServiceProvider extends ServiceProvider
 {
     /**
      * @var bool
