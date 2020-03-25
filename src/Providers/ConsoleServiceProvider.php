@@ -20,8 +20,7 @@ class ConsoleServiceProvider extends ServiceProvider
     public function register()
     {
         $this->commands([
-            \EyeCore\Console\GenerateSitemap::class,
-            \EyeCore\Console\ModuleCreate::class,
+            \EyeCore\Console\GenerateSitemap::class
         ]);
     }
 }
