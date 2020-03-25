@@ -161,12 +161,12 @@ class ModuleServiceProvider extends ServiceProvider
     public function setModules()
     {
         // get the modules
-        $coreModules = $this->getModules(base_path('vendor/eyeweb/missioncontrolcore/src/Modules'));
+        $coreModules = $this->getModules(base_path('vendor/eyeweb/eyecore/src/Modules'));
 
         // get package modules
         $packageFiles = File::glob(base_path('vendor/eyeweb/*/src/Modules'));
         foreach($packageFiles as $packageFile) {
-            if(Str::contains($packageFile, 'missioncontrolcore')) {
+            if(Str::contains($packageFile, 'eyecore')) {
                 continue;
             }
             foreach($this->getModules($packageFile) as $key => $packageModule) {
@@ -262,7 +262,7 @@ class ModuleServiceProvider extends ServiceProvider
      */
     public function core_path($dir)
     {
-        return base_path('vendor/eyeweb/missioncontrolcore/src/Modules/' . $dir);
+        return base_path('vendor/eyeweb/eyecore/src/Modules/' . $dir);
     }
 
     /**
@@ -271,7 +271,7 @@ class ModuleServiceProvider extends ServiceProvider
      */
     public function package_path($dir)
     {
-        if(!Str::contains('missioncontrolcore', $dir)) {
+        if(!Str::contains('eyecore', $dir)) {
             $explodeDir = explode('vendor', $dir);
             if(isset($explodeDir[1])) {
                 return base_path('vendor' . $explodeDir[1]);

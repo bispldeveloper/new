@@ -57,7 +57,7 @@ class AdminPageTemplateController extends Controller
         if(File::exists(base_path('modules/Pages/Resources/Views/Frontend'))) {
             $directoryArray[] = base_path('modules/Pages/Resources/Views/Frontend');
         }
-        $directoryArray[] = base_path('vendor/eyeweb/missioncontrolcore/src/Modules/Pages/Resources/Views/Frontend');
+        $directoryArray[] = base_path('vendor/eyeweb/eyecore/src/Modules/Pages/Resources/Views/Frontend');
         $pagetemplatefiles = File::files($directoryArray);
 
         $pagetemplates = [];
@@ -95,7 +95,7 @@ class AdminPageTemplateController extends Controller
         if(File::exists(base_path('modules/Pages/Resources/Views/Frontend'))) {
             $directoryArray[] = base_path('modules/Pages/Resources/Views/Frontend');
         }
-        $directoryArray[] = base_path('vendor/eyeweb/missioncontrolcore/src/Modules/Pages/Resources/Views/Frontend');
+        $directoryArray[] = base_path('vendor/eyeweb/eyecore/src/Modules/Pages/Resources/Views/Frontend');
         $pagetemplatefiles = File::files($directoryArray);
 
         $pagetemplates = [];
