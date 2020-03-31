@@ -132,9 +132,9 @@ class ModuleServiceProvider extends ServiceProvider
         }
 
         Route::group(['middleware' => ['web', 'urlredirects', 'staging']], function($router) use ($routesFile) {
-            Route::post('{pageform?}', ['as' => 'pageforms.enquire', 'uses' => '\Modules\PageFormEnquiries\Controllers\PageFormEnquiryController@enquire'])->middleware(\Spatie\Honeypot\ProtectAgainstSpam::class)->where('pageformslug', '.+');
-            Route::get('{pageform?}/thanks', ['as' => 'pageforms.thanks', 'uses' => '\Modules\PageFormEnquiries\Controllers\PageFormEnquiryController@thanks'])->where('pageformslug', '.+');
-            Route::get('{slug?}', ['as' => 'page.show', 'uses' => '\Modules\Pages\Controllers\PageController@show'])->where('slug', '.+');
+            Route::post('{pageform?}', ['as' => 'pageforms.enquire', 'uses' => '\EyeSite\Modules\PageFormEnquiries\Controllers\PageFormEnquiryController@enquire'])->middleware(\Spatie\Honeypot\ProtectAgainstSpam::class)->where('pageformslug', '.+');
+            Route::get('{pageform?}/thanks', ['as' => 'pageforms.thanks', 'uses' => '\EyeSite\Modules\PageFormEnquiries\Controllers\PageFormEnquiryController@thanks'])->where('pageformslug', '.+');
+            Route::get('{slug?}', ['as' => 'page.show', 'uses' => '\EyeSite\Modules\Pages\Controllers\PageController@show'])->where('slug', '.+');
         });
     }
 
