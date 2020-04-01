@@ -24,10 +24,10 @@
                     <table class="data-table">
                         <thead>
                             <tr>
-                                <th>Form Name</th>
+                                <th>{!! sortable_link('name', 'Form Name') !!}</th>
                                 <th>Status</th>
                                 <th>Email To</th>
-                                <th>Last Updated</th>
+                                <th>{!! sortable_link('updated_at', 'Last Updated') !!}</th>
                                 <th></th>
                             </tr>
                         </thead>

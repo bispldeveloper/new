@@ -36,7 +36,7 @@ class AdminPageFormEnquiryController extends Controller
     {
         $filter = request()->has('filter') && request()->input('filter') != '' ? ['status' => request()->input('filter')] : null;
 
-        $pageformenquiries = $this->pageFormEnquiryRepo->getAll(20, 'created_at', 'desc', $filter);
+        $pageformenquiries = $this->pageFormEnquiryRepo->getAll(20, request()->input('sort_by'), request()->input('sort_order'), $filter);
 
         return view('PageFormEnquiries::Admin.index', compact('pageformenquiries'));
     }

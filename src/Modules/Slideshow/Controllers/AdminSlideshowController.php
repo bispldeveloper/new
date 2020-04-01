@@ -39,11 +39,9 @@ class AdminSlideshowController extends Controller
      */
     public function index()
     {
-        $filter = request()->has('filter') ? request()->input('filter') : false;
+        $slideshows = $this->slideshowRepo->getAllFiltered(request()->input('filter'), 10, request()->input('sort_by'), request()->input('sort_order'));
 
-        $slideshows = $this->slideshowRepo->getAllFiltered($filter, 10, 'updated_at', 'asc');
-
-        return view('Slideshow::Admin.index', compact('slideshows', 'filter'));
+        return view('Slideshow::Admin.index', compact('slideshows'));
     }
 
     /**

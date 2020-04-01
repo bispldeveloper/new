@@ -40,9 +40,9 @@
                     <table class="data-table">
                         <thead>
                         <tr>
-                            <th>From</th>
-                            <th>To</th>
-                            <th>Last Updated</th>
+                            <th>{!! sortable_link('from', 'From') !!}</th>
+                            <th>{!! sortable_link('to', 'To') !!}</th>
+                            <th>{!! sortable_link('updated_at', 'Last Updated') !!}</th>
                             <th>Options</th>
                         </tr>
                         </thead>
@@ -69,7 +69,7 @@
                             @endforeach
                         @else
                             <tr class="no-results">
-                                <td colspan="4" class="text-center">There are no {{ $filter }} url redirects available.</td>
+                                <td colspan="4" class="text-center">There are no {{ request()->input('filter') }} url redirects available.</td>
                             </tr>
                         @endif
                         </tbody>

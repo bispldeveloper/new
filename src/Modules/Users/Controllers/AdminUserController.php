@@ -40,9 +40,7 @@ class AdminUserController extends Controller
      */
     public function index()
     {
-        $filter = request()->has('filter') ? request()->input('filter') : false;
-
-        $users = $this->userRepo->getAllFiltered($filter, 15, 'id', 'desc');
+        $users = $this->userRepo->getAllFiltered(request()->input('filter'), 15, request()->input('sort_by'), request()->input('sort_order'));
 
         return view('Users::Admin.index', compact('users', 'filter'));
     }

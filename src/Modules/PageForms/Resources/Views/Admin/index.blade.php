@@ -31,9 +31,9 @@
                     <table class="data-table">
                         <thead>
                             <tr>
-                                <th>Name</th>
+                                <th>{!! sortable_link('name', 'Name') !!}</th>
                                 <th>Email To</th>
-                                <th>Last Updated</th>
+                                <th>{!! sortable_link('updated_at', 'Last Updated') !!}</th>
                                 <th></th>
                             </tr>
                         </thead>

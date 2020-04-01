@@ -57,11 +57,9 @@ class AdminPageController extends Controller
      */
     public function index()
     {
-        $filter = request()->has('filter') ? request()->input('filter') : false;
+        $pages = $this->pageRepo->getAllFiltered(request()->input('filter'), 40, request()->input('sort_by'), request()->input('sort_order'));
 
-        $pages = $this->pageRepo->getAllFiltered($filter, 40, 'updated_at', 'asc');
-
-        return view('Pages::Admin.index', compact('pages', 'filter'));
+        return view('Pages::Admin.index', compact('pages'));
     }
 
     /**

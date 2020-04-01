@@ -31,10 +31,10 @@
                     <table class="data-table">
                         <thead>
                         <tr>
-                            <th>Template Name</th>
+                            <th>{!! sortable_link('name', 'Template Name') !!}</th>
                             <th>Status</th>
                             <th>Layout</th>
-                            <th>Last Updated</th>
+                            <th>{!! sortable_link('updated_at', 'Last Updated') !!}</th>
                             <th>Options</th>
                         </tr>
                         </thead>
@@ -68,7 +68,7 @@
                             @endforeach
                         @else
                             <tr class="no-results">
-                                <td colspan="5" class="text-center">There are no {{ $filter }} templates available.</td>
+                                <td colspan="5" class="text-center">There are no {{ request()->input('filter') }} templates available.</td>
                             </tr>
                         @endif
                         </tbody>

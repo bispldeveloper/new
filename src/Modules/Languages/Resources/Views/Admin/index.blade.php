@@ -60,7 +60,7 @@
                             @endforeach
                         @else
                             <tr class="no-results">
-                                <td colspan="4" class="text-center">Unfortunately there are no {{ $filter }} languages available.</td>
+                                <td colspan="4" class="text-center">Unfortunately there are no {{ request()->input('filter') }} languages available.</td>
                             </tr>
                         @endif
                         </tbody>

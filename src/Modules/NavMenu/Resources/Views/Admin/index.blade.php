@@ -39,7 +39,7 @@
                             @endforeach
                         @else
                             <tr class="no-results">
-                                <td colspan="2">There are no {{ $filter }} navigations available.</td>
+                                <td colspan="2">There are no {{ request()->input('filter') }} navigations available.</td>
                             </tr>
                         @endif
                         </tbody>

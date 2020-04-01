@@ -34,11 +34,9 @@ class AdminUrlRedirectController extends Controller
      */
     public function index()
     {
-        $filter = request()->has('filter') ? request()->input('filter') : false;
+        $urlredirects = $this->urlredirectRepo->getAllFiltered(request()->input('filter'), 30, request()->input('sort_by'), request()->input('sort_order'));
 
-        $urlredirects = $this->urlredirectRepo->getAllFiltered($filter, 30, 'id', 'asc');
-
-        return view('UrlRedirects::Admin.index', compact('urlredirects', 'filter'));
+        return view('UrlRedirects::Admin.index', compact('urlredirects'));
     }
 
     /**

@@ -67,7 +67,7 @@
                             @endforeach
                         @else
                             <tr class="no-results">
-                                <td colspan="3">There are no {{ $filter }} user groups available.</td>
+                                <td colspan="3">There are no {{ request()->input('filter') }} user groups available.</td>
                             </tr>
                         @endif
                         </tbody>

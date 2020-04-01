@@ -183,15 +183,21 @@ abstract class EloquentRepository implements EloquentInterface {
     /**
      * Get all filtered objects
      *
-     * @param (array) $filter
-     * @param $paginate
-     * @param $sort_by
-     * @param $sort_direction
+     * @param bool $filter
+     * @param bool $paginate
+     * @param bool $sort_by
+     * @param bool $sort_direction
+     *
      * @return mixed
      */
-    public function getAllFiltered($filter, $paginate = false, $sort_by = 'id', $sort_direction = 'asc')
+    public function getAllFiltered($filter = false, $paginate = false, $sort_by = null, $sort_direction = null)
     {
-
+        if(! is_string($sort_by)) {
+            $sort_by = 'id';
+        }
+        if(! is_string($sort_direction)) {
+            $sort_direction = 'desc';
+        }
         if($filter == 'hidden')
         {
             if($paginate)
@@ -244,9 +250,14 @@ abstract class EloquentRepository implements EloquentInterface {
      * @param bool $with
      * @return mixed
      */
-    public function getAll($paginate = false, $sort_by = 'id', $sort_direction = 'asc', $where = false, $with = false)
+    public function getAll($paginate = false, $sort_by = false, $sort_direction = null, $where = null, $with = false)
     {
-
+        if(! is_string($sort_by)) {
+            $sort_by = 'id';
+        }
+        if(! is_string($sort_direction)) {
+            $sort_direction = 'desc';
+        }
         if($paginate)
         {
 
@@ -300,9 +311,14 @@ abstract class EloquentRepository implements EloquentInterface {
      * @param bool $with
      * @return mixed
      */
-    public function getAllDeleted($paginate = false, $sort_by = 'id', $sort_direction = 'asc', $where = false, $with = false)
+    public function getAllDeleted($paginate = false, $sort_by = null, $sort_direction = null, $where = false, $with = false)
     {
-
+        if(! is_string($sort_by)) {
+            $sort_by = 'id';
+        }
+        if(! is_string($sort_direction)) {
+            $sort_direction = 'desc';
+        }
         if($paginate)
         {
 

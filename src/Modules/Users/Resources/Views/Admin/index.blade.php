@@ -35,7 +35,7 @@
                         <thead>
                         <tr>
                             <th>Name</th>
-                            <th>Email</th>
+                            <th>{!! sortable_link('email', 'Email') !!}</th>
                             <th>User Group</th>
                             <th></th>
                         </tr>
@@ -65,7 +65,7 @@
                             @endforeach
                         @else
                             <tr class="no-results">
-                                <td colspan="5">There are no {{ $filter }} users available.</td>
+                                <td colspan="5">There are no {{ request()->input('filter') }} users available.</td>
                             </tr>
                         @endif
                         </tbody>

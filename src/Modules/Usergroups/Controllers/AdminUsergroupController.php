@@ -31,11 +31,9 @@ class AdminUsergroupController extends Controller
      */
     public function index()
     {
-        $filter = request()->has('filter') ? request()->input('filter') : false;
+        $usergroups = $this->usergroupRepo->getAllFiltered(request()->input('filter'), false, 'id', 'desc');
 
-        $usergroups = $this->usergroupRepo->getAllFiltered($filter, false, 'id', 'desc');
-
-        return view('Usergroups::Admin.index', compact('usergroups', 'filter'));
+        return view('Usergroups::Admin.index', compact('usergroups'));
     }
 
     /**

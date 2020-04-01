@@ -30,7 +30,7 @@ class AdminSiteSettingsController extends Controller
      */
     public function index()
     {
-        $sitesettings = $this->siteSettingsRepo->getAll();
+        $sitesettings = $this->siteSettingsRepo->getAll(false, 'id', 'asc');
         return view('SiteSettings::Admin.index', compact('sitesettings'));
     }
 

@@ -31,10 +31,10 @@
                     <table class="data-table">
                         <thead>
                             <tr>
-                                <th>Title</th>
-                                <th>Url (Slug)</th>
+                                <th>{!! sortable_link('title', 'Title') !!}</th>
+                                <th>{!! sortable_link('slug', 'Url (Slug)') !!}</th>
                                 <th>Status</th>
-                                <th>Last Updated</th>
+                                <th>{!! sortable_link('updated_at', 'Last Updated') !!}</th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -66,7 +66,7 @@
                             @endforeach
                         @else
                             <tr class="no-results">
-                                <td colspan="5">There are no {{ $filter }} pages available.</td>
+                                <td colspan="5">There are no {{ request()->input('filter') }} pages available.</td>
                             </tr>
                         @endif
                         </tbody>

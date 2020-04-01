@@ -69,7 +69,7 @@
                             @endforeach
                         @else
                             <tr class="no-results">
-                                <td colspan="3">There are no {{ $filter }} admin groups available.</td>
+                                <td colspan="3">There are no {{ request()->input('filter') }} admin groups available.</td>
                             </tr>
                         @endif
                         </tbody>

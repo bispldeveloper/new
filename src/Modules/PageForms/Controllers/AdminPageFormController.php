@@ -40,7 +40,7 @@ class AdminPageFormController extends Controller
      */
     public function index()
     {
-        $pageforms = $this->pageFormRepo->getAll(20);
+        $pageforms = $this->pageFormRepo->getAll(20, request()->input('sort_by'), request()->input('sort_order'));
 
         return view('PageForms::Admin.index', compact('pageforms'));
     }

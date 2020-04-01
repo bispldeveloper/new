@@ -20,9 +20,9 @@
                     <table class="data-table">
                         <thead>
                         <tr>
-                            <th>Report</th>
+                            <th>{!! sortable_link('name', 'Report') !!}</th>
                             <th>Submitted By</th>
-                            <th>Uploaded Date</th>
+                            <th>{!! sortable_link('published_date', 'Uploaded Date') !!}</th>
                             <th></th>
                         </tr>
                         </thead>

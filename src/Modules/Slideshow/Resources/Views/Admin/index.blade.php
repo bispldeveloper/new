@@ -31,9 +31,9 @@
                     <table class="data-table">
                         <thead>
                         <tr>
-                            <th>Name</th>
+                            <th>{!! sortable_link('name', 'Name') !!}</th>
                             <th>Status</th>
-                            <th>Last Updated</th>
+                            <th>{!! sortable_link('updated_at', 'Last Updated') !!}</th>
                             <th></th>
                         </tr>
                         </thead>
@@ -66,7 +66,7 @@
                             @endforeach
                         @else
                             <tr class="no-results">
-                                <td colspan="4">There are no {{ $filter }} slideshows available yet</td>
+                                <td colspan="4">There are no {{ request()->input('filter') }} slideshows available yet</td>
                             </tr>
                         @endif
                         </tbody>

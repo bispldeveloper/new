@@ -40,9 +40,7 @@ class AdminPageTemplateBlockController extends Controller
      */
     public function index()
     {
-        $filter = request()->has('filter') ? request()->input('filter') : false;
-
-        $pagetemplateblocks = $this->pageTemplateBlockRepo->getAllFiltered($filter, false, 'id', 'asc');
+        $pagetemplateblocks = $this->pageTemplateBlockRepo->getAllFiltered(request()->input('filter'), false, 'id', 'asc');
 
         return view('PageTemplateBlocks::Admin.index', compact('pagetemplateblocks', 'filter'));
     }

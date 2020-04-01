@@ -32,11 +32,9 @@ class AdminLanguageController extends Controller
      */
     public function index()
     {
-        $filter = request()->has('filter') ? request()->input('filter') : false;
+        $languages = $this->languageRepo->getAllFiltered(request()->input('filter'), false, 'id', 'asc');
 
-        $languages = $this->languageRepo->getAllFiltered($filter, false, 'id', 'asc');
-
-        return view('Languages::Admin.index', compact('languages', 'filter'));
+        return view('Languages::Admin.index', compact('languages'));
     }
 
     /**

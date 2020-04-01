@@ -40,11 +40,9 @@ class AdminPageTemplateController extends Controller
      */
     public function index()
     {
-        $filter = request()->has('filter') ? request()->input('filter') : false;
+        $pagetemplates = $this->pageTemplateRepo->getAllFiltered(request()->input('filter'), false, request()->input('sort_by'), request()->input('sort_order'));
 
-        $pagetemplates = $this->pageTemplateRepo->getAllFiltered($filter, false, 'id', 'asc');
-
-        return view('PageTemplates::Admin.index', compact('pagetemplates', 'filter'));
+        return view('PageTemplates::Admin.index', compact('pagetemplates'));
     }
 
     /**
