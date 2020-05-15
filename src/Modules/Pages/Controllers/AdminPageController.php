@@ -69,7 +69,7 @@ class AdminPageController extends Controller
     public function create()
     {
         if(!request()->has('template') or !is_numeric(request()->input('template'))) {
-            $pageTemplates = $this->pageTemplateRepo->getAll();
+            $pageTemplates = $this->pageTemplateRepo->getAllTemplates();
             return view('Pages::Admin.choosetemplate', compact('pageTemplates'));
         }
 

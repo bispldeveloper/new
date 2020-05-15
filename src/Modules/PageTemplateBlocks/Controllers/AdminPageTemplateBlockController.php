@@ -131,7 +131,7 @@ class AdminPageTemplateBlockController extends Controller
      */
     public function confirmDelete(PageTemplate $pagetemplate, PageTemplateBlock $pagetemplateblock)
     {
-        $destroyRoute = route('mc-admin.pagetemplateblocks.destroy', $pagetemplateblock->id);
+        $destroyRoute = route('mc-admin.pagetemplates.pagetemplateblocks.destroy', ['pagetemplate' => $pagetemplate, 'pagetemplateblock' => $pagetemplateblock]);
         return view('Admins::Admin.partials.confirm-delete', compact('destroyRoute'));
     }
 }

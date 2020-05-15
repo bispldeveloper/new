@@ -23,4 +23,15 @@ class PageTemplateRepository extends EloquentRepository implements PageTemplateI
 
         $this->model = $model;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getAllTemplates()
+    {
+        if (auth()->guard('admins')->user()->admingroup_id == 1) {
+            return $this->model->get();
+        }
+        return $this->model->where('published', true)->get();
+    }
 }

@@ -19,14 +19,12 @@
             @if($pageTemplates->count() > 0)
                 <div class="row small-up-2 medium-up-3 large-up-4">
                     @foreach ($pageTemplates as $pageTemplate)
-                        @if($pageTemplate->id != 1)
-                            <div class="column column-block">
-                                <div class="content-block">
-                                    <p class="content-block-title">{{ $pageTemplate->present()->getName }}</p>
-                                    <a href="?template={{ $pageTemplate->id }}" class="button success">Select Template</a>
-                                </div>
+                        <div class="column column-block">
+                            <div class="content-block">
+                                <p class="content-block-title">{{ $pageTemplate->present()->getName }}</p>
+                                <a href="?template={{ $pageTemplate->id }}" class="button success">Select Template</a>
                             </div>
-                        @endif
+                        </div>
                     @endforeach
                 </div>
             @else
