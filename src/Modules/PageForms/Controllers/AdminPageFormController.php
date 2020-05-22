@@ -188,5 +188,20 @@ class AdminPageFormController extends Controller
 
         return redirect()->back();
     }
+    /**
+     * @return mixed
+     */
+    public function search()
+    {
+        $terms = request()->input('terms');
 
+        $results = $this->pageFormRepo->searchByTitle($terms, 10)->each(function($item, $key) {
+            $item->id = $item->id;
+            $item->value = $item->title;
+        });
+
+        if(request()->ajax()) {
+            return $results;
+        }
+    }
 }

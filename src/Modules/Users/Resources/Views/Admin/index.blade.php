@@ -82,3 +82,43 @@
     </div>
 
 @stop
+@section('scripts')
+    @parent
+<script>
+    $('#users').select2({
+        placeholder: 'Search users by email..',
+        minimumInputLength: 2,
+        cache: true,
+        language: {
+            noResults: function () {
+                return 'No results';
+            }
+        },
+        ajax: {
+            url: '{{ route('mc-admin.users.search') }}',
+            dataType: 'json',
+            method: 'post',
+            delay: 200,
+            data: function (params) {
+                var query = {
+                    terms: params.term,
+                    type: 'public',
+                    _token: '{{ csrf_token() }}'
+                };
+                return query;
+            },
+            processResults: function (data, params) {
+                return {
+                    results: $.map(data, function (obj) {
+                        return {id: obj.id, text: obj.value};
+                    })
+                };
+            }
+        }
+    });
+    $('#users').on('select2:select', function (e) {
+        var data = e.params.data;
+        window.location = '/mc-admin/users/' + data.id + '/edit';
+    });
+</script>
+@stop

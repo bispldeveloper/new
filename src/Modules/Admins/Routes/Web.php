@@ -21,6 +21,7 @@ Route::group(['prefix' => 'mc-admin', 'as' => 'mc-admin.', 'middleware' => ['aut
     Route::post('admins/{id}/change-password', ['as' => 'admins.changepassword', 'uses' => '\EyeCore\Modules\Admins\Controllers\AdminAdminController@changePassword']);
     Route::get('admins/{id}/confirm-restore', ['as' => 'admins.confirm-restore', 'uses' => '\EyeCore\Modules\Admins\Controllers\AdminAdminController@confirmRestore']);
     Route::post('admins/{id}/restore', ['as' => 'admins.restore', 'uses' => '\EyeCore\Modules\Admins\Controllers\AdminAdminController@restore']);
+    Route::post('admins/search', ['as' => 'admins.search', 'uses' => '\EyeCore\Modules\Admins\Controllers\AdminAdminController@search']);
     Route::resource('admins', '\EyeCore\Modules\Admins\Controllers\AdminAdminController', ['except' => ['show']])->parameters(['admins' => 'admin']);
 
     // Sort order function

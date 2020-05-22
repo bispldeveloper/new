@@ -6,5 +6,6 @@ Route::group(['prefix' => 'mc-admin', 'as' => 'mc-admin.', 'middleware' => ['aut
     Route::post('pageforms/{id}/restore', ['as' => 'pageforms.restore', 'uses' => '\EyeCore\Modules\PageForms\Controllers\AdminPageFormController@restore']);
     Route::get('pageforms/{pageform}/addfield', ['as' => 'pageforms.addfield', 'uses' => '\EyeCore\Modules\PageForms\Controllers\AdminPageFormController@addField']);
     Route::put('pageforms/{pageform}/addfield', ['as' => 'pageforms.storefield', 'uses' => '\EyeCore\Modules\PageForms\Controllers\AdminPageFormController@storeField']);
+    Route::post('pageforms/search', ['as' => 'pageforms.search', 'uses' => '\EyeCore\Modules\PageForms\Controllers\AdminPageFormController@search']);
     Route::resource('pageforms', '\EyeCore\Modules\PageForms\Controllers\AdminPageFormController', ['except' => ['show']])->parameters(['pageforms' => 'pageform']);
 });

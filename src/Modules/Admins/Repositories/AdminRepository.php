@@ -43,4 +43,26 @@ class AdminRepository extends EloquentRepository implements AdminInterface
 
         return $model->paginate($paginate);
     }
+
+    /**
+     * @param $title
+     * @param bool $limit
+     * @return bool
+     */
+    public function searchAdmins($title, $limit = false)
+    {
+        if($title == '') {
+            return false;
+        }
+
+        $query = $this->model->where(function($query) use ($title) {
+            $query->where('email', 'like', '%' . $title . '%');
+        });
+
+        if($limit) {
+            $query->take($limit);
+        }
+
+        return $query->get();
+    }
 }

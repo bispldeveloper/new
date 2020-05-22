@@ -40,7 +40,9 @@ class AdminUserController extends Controller
      */
     public function index()
     {
-        $users = $this->userRepo->getAllFiltered(request()->input('filter'), 15, request()->input('sort_by'), request()->input('sort_order'));
+        $filter = request()->input('filter');
+
+        $users = $this->userRepo->getAllFiltered($filter, 15, request()->input('sort_by'), request()->input('sort_order'));
 
         return view('Users::Admin.index', compact('users', 'filter'));
     }
@@ -171,5 +173,22 @@ class AdminUserController extends Controller
         $user = $this->userRepo->getById($id);
         $restoreRoute = route('mc-admin.users.restore', $user->id);
         return view('Admins::Admin.partials.confirm-restore', compact('restoreRoute'));
+    }
+
+    /**
+     * @return mixed
+     */
+    public function search()
+    {
+        $terms = request()->input('terms');
+
+        $results = $this->userRepo->searchUsers($terms, 10)->each(function($item, $key) {
+            $item->id = $item->id;
+            $item->value = $item->email;
+        });
+
+        if(request()->ajax()) {
+            return $results;
+        }
     }
 }

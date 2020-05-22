@@ -4,6 +4,7 @@ Route::group(['prefix' => 'mc-admin', 'as' => 'mc-admin.', 'middleware' => ['aut
     Route::post('users/{user}/changepassword', ['as' => 'users.changepassword', 'uses' => '\EyeCore\Modules\Users\Controllers\AdminUserController@changePassword']);
     Route::get('users/{id}/confirm-restore', ['as' => 'users.confirm-restore', 'uses' => '\EyeCore\Modules\Users\Controllers\AdminUserController@confirmRestore']);
     Route::post('users/{id}/restore', ['as' => 'users.restore', 'uses' => '\EyeCore\Modules\Users\Controllers\AdminUserController@restore']);
+    Route::post('users/search', ['as' => 'users.search', 'uses' => '\EyeCore\Modules\Users\Controllers\AdminUserController@search']);
     Route::resource('users', '\EyeCore\Modules\Users\Controllers\AdminUserController', ['except' => ['show']])->parameters(['users' => 'user']);
 });
 

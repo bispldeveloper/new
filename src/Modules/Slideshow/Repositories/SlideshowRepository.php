@@ -24,4 +24,26 @@ class SlideshowRepository extends EloquentRepository implements SlideshowInterfa
 
         $this->model = $model;
     }
+
+    /**
+     * @param $title
+     * @param bool $limit
+     * @return bool
+     */
+    public function searchByTitle($title, $limit = false)
+    {
+        if($title == '') {
+            return false;
+        }
+
+        $query = $this->model->where(function($query) use ($title) {
+            $query->where('name', 'like', '%' . $title . '%');
+        });
+
+        if($limit) {
+            $query->take($limit);
+        }
+
+        return $query->get();
+    }
 }

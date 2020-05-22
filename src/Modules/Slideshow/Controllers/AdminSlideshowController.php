@@ -144,4 +144,21 @@ class AdminSlideshowController extends Controller
         $restoreRoute = route('mc-admin.slideshows.restore', $slideshow->id);
         return view('Admins::Admin.partials.confirm-restore', compact('restoreRoute'));
     }
+
+    /**
+     * @return mixed
+     */
+    public function search()
+    {
+        $terms = request()->input('terms');
+
+        $results = $this->slideshowRepo->searchByTitle($terms, 10)->each(function($item, $key) {
+            $item->id = $item->id;
+            $item->value = $item->name;
+        });
+
+        if(request()->ajax()) {
+            return $results;
+        }
+    }
 }

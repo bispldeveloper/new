@@ -184,4 +184,21 @@ class AdminAdminController extends Controller
         $restoreRoute = route('mc-admin.admins.restore', $admin->id);
         return view('Admins::Admin.partials.confirm-restore', compact('restoreRoute'));
     }
+
+    /**
+     * @return mixed
+     */
+    public function search()
+    {
+        $terms = request()->input('terms');
+
+        $results = $this->adminRepo->searchAdmins($terms, 10)->each(function($item, $key) {
+            $item->id = $item->id;
+            $item->value = $item->email;
+        });
+
+        if(request()->ajax()) {
+            return $results;
+        }
+    }
 }

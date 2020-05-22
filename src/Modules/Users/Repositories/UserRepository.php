@@ -25,4 +25,26 @@ class UserRepository extends EloquentRepository implements UserInterface
 
         $this->model = $model;
     }
+
+    /**
+     * @param $title
+     * @param bool $limit
+     * @return bool
+     */
+    public function searchUsers($title, $limit = false)
+    {
+        if($title == '') {
+            return false;
+        }
+
+        $query = $this->model->where(function($query) use ($title) {
+            $query->where('email', 'like', '%' . $title . '%');
+        });
+
+        if($limit) {
+            $query->take($limit);
+        }
+
+        return $query->get();
+    }
 }
