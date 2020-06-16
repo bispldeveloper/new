@@ -49,7 +49,7 @@ class PagePresenter extends Presenter
      */
     public function getMetaDescription()
     {
-        if($this->meta_title != '') {
+        if($this->meta_description != '') {
             return $this->meta_description;
         }
         return ucfirst($this->sub_title);
