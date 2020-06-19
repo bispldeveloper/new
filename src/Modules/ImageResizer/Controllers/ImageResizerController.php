@@ -42,7 +42,7 @@ class ImageResizerController extends Controller
 			$newImage->resizeCanvas($width, $height)->encode($format, $quality)->stream();
 		}
 		
-		return response($newImage->__toString())
+		return response($newImage->__toString(), 200)
 			->header('Content-Type', $newImage->mime())
 			->header('Cache-Control', 'max-age=604800, public')
 			->header('Etag', md5($newImage->__toString()));
