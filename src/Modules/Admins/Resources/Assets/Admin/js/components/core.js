@@ -33,3 +33,64 @@ $(function () {
         }
     })
 });
+
+// select2 helper
+$(document).ready(function () {
+    initialiseSearchables();
+});
+
+$(document).on('open.zf.reveal', initialiseSearchables);
+
+function initialiseSearchables() {
+    var select = $('.searchable');
+    select.each(function(k, i) {
+        var id = k;
+        $($(i)).wrap('<div id="select-' + id + '" class="searchable-container"></div>');
+        var settings = {
+            dropdownParent: $('#select-' + id),
+            cache: true,
+            width: '100%'
+        }
+
+        if($(i).hasClass('taggable')) {
+            settings.tags = true;
+        }
+        if($(i).hasClass('clearable')) {
+            settings.allowClear = true;
+            settings.placeholder = true;
+        }
+
+        if($($(i)).attr('action')) {
+            settings.minimumInputLength = 2,
+                settings.ajax = {
+                    url: $(i).attr('action'),
+                    dataType: 'json',
+                    method: 'post',
+                    delay: 200,
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    data: function (params) {
+                        var query = {
+                            terms: params.term,
+                            type: 'public',
+                            activeOnly: true
+                        }
+                        return query;
+                    },
+                    processResults: function (data, params) {
+                        return {
+                            results: $.map(data, function (obj) {
+                                return {id: obj.value, text: obj.label, data: obj.data};
+                            })
+                        };
+                    }
+                }
+        }
+        $($(i)).select2(settings);
+    });
+}
+
+$(document).on('select2:select', '.select-submit', function(e) {
+    $(this).closest('form').submit();
+});

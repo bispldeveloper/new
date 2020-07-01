@@ -76,3 +76,6 @@ import 'chart.js';
  * https://github.com/chartjs/chartjs-plugin-deferred
  */
 import 'chartjs-plugin-deferred';
+
+
+import 'select2';
