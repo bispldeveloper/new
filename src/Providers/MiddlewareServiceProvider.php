@@ -31,6 +31,7 @@ class MiddlewareServiceProvider extends ServiceProvider
         'auth.user' => \EyeCore\Modules\Users\Middleware\User::class,
         'staging' => \EyeCore\Modules\Staging\Middleware\Staging::class,
         'language' => \EyeCore\Modules\Languages\Middleware\Language::class,
+        'auth.admin-or-user' => \EyeCore\Modules\Admingroups\Middleware\AdminOrUser::class,
     ];
 
     /**
