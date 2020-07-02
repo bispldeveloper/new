@@ -16,7 +16,18 @@ class AdminOrUser
      */
     public function handle($request, Closure $next)
     {
-        if (!auth()->guard('admins')->guest() && auth()->guest() || auth()->guard('admins')->guest() && !auth()->guest()) {
+        // is admin
+        if (!auth()->guard('admins')->guest() && auth()->guest()) {
+            return $next($request);
+        }
+
+        // is user
+        if(auth()->guard('admins')->guest() && !auth()->guest()) {
+            return $next($request);
+        }
+
+        // logged in both as a user and admin
+        if(!auth()->guard('admins')->guest() && !auth()->guest()) {
             return $next($request);
         }
 
