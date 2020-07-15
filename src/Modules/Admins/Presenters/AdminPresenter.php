@@ -71,4 +71,12 @@ class AdminPresenter extends Presenter
     {
         return $this->deleted_at->format('d/m/Y - g:i A');
     }
+
+    /**
+     * @return string
+     */
+    public function getInitials()
+    {
+        return substr($this->first_name, 0, 1) . substr($this->last_name, 0, 1);
+    }
 }
