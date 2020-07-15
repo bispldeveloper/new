@@ -1,4 +1,4 @@
-<div class="row align-right">
+<div class="row align-right" id="submenu">
     <div class="small-12 medium-5 large-3 columns">
         <div id="search-block" style="position: relative;">
             {!! Form::select('slideshows', [], null, ['id' => 'slideshows']) !!}
