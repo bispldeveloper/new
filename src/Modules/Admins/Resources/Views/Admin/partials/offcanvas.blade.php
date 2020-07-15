@@ -4,7 +4,7 @@
         @foreach($adminNavGroups['Site'] as $option)
             @if(auth()->guard('admins')->user()->admingroup->hasPermission($option['route']))
                 <li data-sort-order="{{ $option['sort_order'] }}">
-                    <a href="{{ route($option['route']) }}"><i class="{{ $option['icon'] }}"></i> {{ $option['name'] }}</a>
+                    <a class="{{ Route::current()->getName() == $option['route'] ? 'active' : ''  }}" href="{{ route($option['route']) }}"><i class="{{ $option['icon'] }}"></i> {{ $option['name'] }}</a>
                 </li>
             @endif
         @endforeach
@@ -18,7 +18,7 @@
             @foreach($adminNavGroups['Enquiries'] as $option)
                 @if(auth()->guard('admins')->user()->admingroup->hasPermission($option['route']))
                     <li data-sort-order="{{ $option['sort_order'] }}">
-                        <a href="{{ route($option['route']) }}"><i class="{{ $option['icon'] }}"></i> {{ $option['name'] }}</a>
+                        <a class="{{ Route::current()->getName() == $option['route'] ? 'active' : ''  }}" href="{{ route($option['route']) }}"><i class="{{ $option['icon'] }}"></i> {{ $option['name'] }}</a>
                     </li>
                 @endif
             @endforeach
@@ -33,7 +33,7 @@
             @foreach($adminNavGroups['Marketing Reports'] as $option)
                 @if(auth()->guard('admins')->user()->admingroup->hasPermission($option['route']))
                     <li data-sort-order="{{ $option['sort_order'] }}">
-                        <a href="{{ route($option['route']) }}"><i class="{{ $option['icon'] }}"></i> {{ $option['name'] }}</a>
+                        <a class="{{ Route::current()->getName() == $option['route'] ? 'active' : ''  }}" href="{{ route($option['route']) }}"><i class="{{ $option['icon'] }}"></i> {{ $option['name'] }}</a>
                     </li>
                 @endif
             @endforeach
@@ -48,7 +48,7 @@
             @foreach($adminNavGroups['Settings'] as $option)
                 @if(auth()->guard('admins')->user()->admingroup->hasPermission($option['route']))
                     <li data-sort-order="{{ $option['sort_order'] }}">
-                        <a href="{{ route($option['route']) }}"><i class="{{ $option['icon'] }}"></i> {{ $option['name'] }}</a>
+                        <a class="{{ Route::current()->getName() == $option['route'] ? 'active' : ''  }}" href="{{ route($option['route']) }}"><i class="{{ $option['icon'] }}"></i> {{ $option['name'] }}</a>
                     </li>
                 @endif
             @endforeach
@@ -63,7 +63,7 @@
             @foreach($adminNavGroups['Development'] as $option)
                 @if(auth()->guard('admins')->user()->admingroup->hasPermission($option['route']))
                     <li data-sort-order="{{ $option['sort_order'] }}">
-                        <a href="{{ route($option['route']) }}"><i class="{{ $option['icon'] }}"></i> {{ $option['name'] }}</a>
+                        <a class="{{ Route::current()->getName() == $option['route'] ? 'active' : ''  }}" href="{{ route($option['route']) }}"><i class="{{ $option['icon'] }}"></i> {{ $option['name'] }}</a>
                     </li>
                 @endif
             @endforeach
