@@ -20,6 +20,7 @@ class CreateImagesTable extends Migration
             $table->string('original_filename')->nullable();
             $table->string('filename');
             $table->string('alt_text')->nullable();
+            $table->integer('sort_order')->nullable()->default(0);
             $table->timestamps();
             $table->softDeletes();
         });

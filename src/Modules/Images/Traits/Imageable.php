@@ -9,7 +9,7 @@ trait Imageable {
      */
     public function images()
     {
-        return $this->morphMany(Image::class, 'imageable', 'reference_model', 'reference_id');
+        return $this->morphMany(Image::class, 'imageable', 'reference_model', 'reference_id')->orderBy('sort_order');
     }
 
 }

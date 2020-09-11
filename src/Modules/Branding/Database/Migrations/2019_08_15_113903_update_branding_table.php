@@ -26,14 +26,14 @@ class UpdateBrandingTable extends Migration
                 'submenu_active_link_bg',
                 'submenu_active_link_color'
             ]);
-            $table->string('offcanvas_heading_link_color')->after('offcanvas_bg');
-            $table->string('offcanvas_link_color')->after('offcanvas_heading_link_color');
-            $table->string('offcanvas_link_color_active')->after('offcanvas_link_color');
-            $table->string('offcanvas_link_background_color_active')->after('offcanvas_link_color_active');
-            $table->string('offcanvas_link_icon_color_active')->after('offcanvas_link_background_color_active');
-            $table->string('topbar_bg')->after('offcanvas_link_icon_color_active');
-            $table->string('topbar_link_color')->after('topbar_bg');
-            $table->string('topbar_link_color_hover')->after('topbar_link_color');
+            $table->string('offcanvas_heading_link_color')->nullable()->after('offcanvas_bg');
+            $table->string('offcanvas_link_color')->nullable()->after('offcanvas_heading_link_color');
+            $table->string('offcanvas_link_color_active')->nullable()->after('offcanvas_link_color');
+            $table->string('offcanvas_link_background_color_active')->nullable()->after('offcanvas_link_color_active');
+            $table->string('offcanvas_link_icon_color_active')->nullable()->after('offcanvas_link_background_color_active');
+            $table->string('topbar_bg')->nullable()->after('offcanvas_link_icon_color_active');
+            $table->string('topbar_link_color')->nullable()->after('topbar_bg');
+            $table->string('topbar_link_color_hover')->nullable()->after('topbar_link_color');
         });
 
         Branding::truncate();
