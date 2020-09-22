@@ -48,7 +48,10 @@ class AdminDashboardController extends Controller
     {
         $pages = $this->pageRepo->getLatest(5);
         $enquiries = $this->pageFormEnquiryRepo->getLatest(5);
-        $marketingreport = $this->marketingReportsRepo->getRecent();
+        $marketingreport = false;
+        if(env('EYEWEB_CLIENT_ID') != '') {
+            $marketingreport = $this->marketingReportsRepo->getRecent();
+        }
 
         $mcErrors = [];
         if(auth()->guard('admins')->user()->id == 1) {
