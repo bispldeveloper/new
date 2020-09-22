@@ -59,8 +59,8 @@
                 filelist_manage_menu: 'cut copy paste | view edit rename download addfavorite | zip unzip',
                 filelist_context_menu: 'cut copy paste | view edit rename download addfavorite | zip unzip',
                 oninsert: function (image) {
-                    image.focusedFile.url = image.focusedFile.url.replace('{{ getenv('AWS_CLOUDFRONT_URL') }}', '');
-                    image.focusedFile.thumbnailUrl = image.focusedFile.thumbnailUrl.replace('{{ getenv('AWS_CLOUDFRONT_URL') }}', '');
+                    image.focusedFile.url = image.focusedFile.url.replace('{{ getenv('AWS_URL') }}', '');
+                    image.focusedFile.thumbnailUrl = image.focusedFile.thumbnailUrl.replace('{{ getenv('AWS_URL') }}', '');
                     console.log(image.focusedFile.url);
                     $('#' + moxieField).val(image.focusedFile.url);
                 }
@@ -79,7 +79,7 @@
                 filelist_manage_menu: 'cut copy paste | view edit rename download addfavorite | zip unzip',
                 filelist_context_menu: 'cut copy paste | view edit rename download addfavorite | zip unzip',
                 oninsert: function (file) {
-                    file.focusedFile.url = file.focusedFile.url.replace('{{ getenv('AWS_CLOUDFRONT_URL') }}', '');
+                    file.focusedFile.url = file.focusedFile.url.replace('{{ getenv('AWS_URL') }}', '');
                     $('#' + moxieField).val(file.focusedFile.url);
                 }
             });
@@ -92,8 +92,8 @@
                 skin: 'custom',
                 oninsert: function (images) {
                     $.each(images.files, function (key, val) {
-                        val.url = val.url.replace('{{ getenv('AWS_CLOUDFRONT_URL') }}', '');
-                        val.thumbnailUrl = val.thumbnailUrl.replace('{{ getenv('AWS_CLOUDFRONT_URL') }}', '');
+                        val.url = val.url.replace('{{ getenv('AWS_URL') }}', '');
+                        val.thumbnailUrl = val.thumbnailUrl.replace('{{ getenv('AWS_URL') }}', '');
                     });
                     $.ajax({
                         type: 'post',
