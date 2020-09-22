@@ -38,7 +38,6 @@ class EyeCoreServiceProvider extends ServiceProvider
 
         // register module providers
         $this->app->register('EyeCore\Modules\ImageResizer\ImageResizerServiceProvider');
-        $this->app->register('EyeCore\Modules\Cloudflare\CloudflareServiceProvider');
 
         // register aliases
         $loader = \Illuminate\Foundation\AliasLoader::getInstance();
@@ -47,7 +46,6 @@ class EyeCoreServiceProvider extends ServiceProvider
         $loader->alias('Image', 'Intervention\Image\Facades\Image');
         $loader->alias('ImageResizer', 'EyeCore\Modules\ImageResizer\Facades\ImageResizer');
         $loader->alias('Input', 'Illuminate\Support\Facades\Input');
-        $loader->alias('Cloudflare', 'EyeCore\Modules\Cloudflare\Facades\Cloudflare');
         $loader->alias('PDF', 'Barryvdh\DomPDF\Facade');
 
         if(getenv('APP_ENV') == 'local') {

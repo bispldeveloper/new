@@ -3,7 +3,6 @@
 use App\Http\Controllers\Controller;
 use EyeCore\Modules\EnvironmentVariables\Repositories\EnvironmentVariableRepository;
 use EyeCore\Modules\RobotsTxt\Repositories\RobotsTxtRepository;
-use EyeCore\Modules\Apis\Cloudflare\Facades\Cloudflare;
 use File;
 use Illuminate\Support\Facades\Artisan;
 
@@ -48,9 +47,6 @@ class AdminSiteConfigController extends Controller
      */
     public function gitpull()
     {
-        if(env('CLOUDFLARE_ZONE_ID') != '') {
-            Cloudflare::purge();
-        }
         exec('sudo git pull 2>&1', $output);
         Artisan::call('migrate --force');
         if(file_exists(base_path('bootstrap/cache/modules.php'))) {
