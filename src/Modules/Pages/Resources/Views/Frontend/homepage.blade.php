@@ -2,7 +2,7 @@
 
 @section('metaTitle', $page->present()->getMetaTitle)
 @section('metaDescription', $page->present()->getMetaDescription)
-@section('metaCanonical', $page->present()->getMetCanonical)
+@section('metaCanonical', $page->present()->getMetaCanonical)
 
 @section('content')
 
