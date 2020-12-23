@@ -78,9 +78,7 @@
             <div class="button-block">
                 <div class="row">
                     <div class="small-6 columns">
-                        @if($page->id != 1 && !$page->is_module)
-                            <a href="{{ route('mc-admin.pages.confirm-delete', $page->id) }}" class="button alert trigger-reveal">Delete Page</a>
-                        @endif
+                        &nbsp;
                     </div>
                     <div class="small-6 columns text-right">
                         {!! Form::submit('Save Page', ['class' => 'button success']) !!}
