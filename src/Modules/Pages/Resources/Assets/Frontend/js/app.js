@@ -13,6 +13,12 @@ $(document).ready((event) => {
     $('a[data-rel^=lightcase]').lightcase();
 });
 
+try {
+    window.Swal = require('sweetalert2');
+} catch (e) {
+
+}
+
 /**
  * Custom
  */
@@ -81,3 +87,5 @@ $('#slides').slick({
 // ES6 Examples
 // import ES6Examples from './es6-examples';
 // ES6Examples();
+
+
