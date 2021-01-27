@@ -29,7 +29,7 @@ class AdminMarketingReportController extends Controller
      */
     public function index()
     {
-        $marketingreports = $this->marketingreportRepo->getAll(20, (request()->has('sort_by') ? request()->input('sort_by') : 'published_date'), (request()->has('sort_order') ? request()->input('sort_order') : 'desc'));
+        $marketingreports = $this->marketingreportRepo->getAll(20, (request()->has('sort_by') ? request()->input('sort_by') : 'published_date'), (request()->has('sort_order') ? request()->input('sort_order') : 'desc'), [['client_id', '=', env('EYEWEB_CLIENT_ID')]]);
 
         return view('MarketingReports::Admin.index', compact('marketingreports'));
     }
