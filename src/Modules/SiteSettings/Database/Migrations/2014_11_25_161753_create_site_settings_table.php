@@ -24,6 +24,36 @@ class CreateSiteSettingsTable extends Migration
 
         $sitesettings = [
             [
+                'type' => 'text',
+                'site_setting' => 'company_number',
+                'value' => '',
+            ],
+            [
+                'type' => 'text',
+                'site_setting' => 'vat_number',
+                'value' => '',
+            ],
+            [
+                'type' => 'text',
+                'site_setting' => 'eori_number',
+                'value' => '',
+            ],
+            [
+                'type' => 'text',
+                'site_setting' => 'telephone',
+                'value' => '',
+            ],
+            [
+                'type' => 'text',
+                'site_setting' => 'fax',
+                'value' => '',
+            ],
+            [
+                'type' => 'text',
+                'site_setting' => 'address',
+                'value' => '',
+            ],
+            [
                 'setting' => 'admin_email',
                 'value' => 'support@eyeweb.co.uk'
             ],
