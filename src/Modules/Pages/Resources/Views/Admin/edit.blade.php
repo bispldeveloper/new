@@ -52,6 +52,15 @@
                                                             </div>
                                                         </div>
                                                         {!! Form::hidden('pagetemplateblockcontent['.$code.']['.$block->id.'][page_tb_id]', $block->id) !!}
+                                                    @elseif($block->type == 'file')
+                                                        {!! Form::label($block->present()->getName . ($block->description != '' ? ' (' . $block->present()->getDescription  . ')' : '')) !!}
+                                                        <div class="input-group">
+                                                            {!! Form::text('pagetemplateblockcontent['.$code.']['.$block->id.'][content]', (isset($block->blockcontent[$code]->content) ? $block->blockcontent[$code]->content : ''), ['class' => 'input-group-field', 'id' => 'pagetemplateblockcontent-'. $block->id]) !!}
+                                                            <div class="input-group-button">
+                                                                <input type="submit" class="button black moxie-file-browse" data-moxie-field="pagetemplateblockcontent-{{ $block->id }}" value="Browse">
+                                                            </div>
+                                                        </div>
+                                                        {!! Form::hidden('pagetemplateblockcontent['.$code.']['.$block->id.'][page_tb_id]', $block->id) !!}
                                                     @else
                                                         @php $type = $block->type @endphp
                                                         {!! Form::label($block->present()->getName . ($block->description != '' ? ' (' . $block->present()->getDescription  . ')' : '')) !!}

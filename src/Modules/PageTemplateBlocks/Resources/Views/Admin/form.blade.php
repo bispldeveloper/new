@@ -25,7 +25,7 @@
         <div class="row">
             <div class="small-12 columns">
                 {!! Form::label('type', 'Block Type', ['class' => $errors->first('type', 'is-invalid-label')]) !!}
-                {!! Form::select('type', ['text' => 'Text', 'textarea' => 'Textarea', 'image' => 'Image'], ['class' => $errors->first('type', 'is-invalid-input')]) !!}
+                {!! Form::select('type', ['text' => 'Text', 'textarea' => 'Textarea', 'image' => 'Image', 'file' => 'File'], ['class' => $errors->first('type', 'is-invalid-input')]) !!}
                 {!! $errors->first('type', '<span class="form-error is-visible">:message</span>' ) !!}
             </div>
         </div>
