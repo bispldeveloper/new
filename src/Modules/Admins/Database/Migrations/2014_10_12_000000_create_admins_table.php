@@ -30,7 +30,7 @@ class CreateAdminsTable extends Migration
             "admingroup_id" => "1",
             "first_name" => 'Eye',
             "last_name" => 'Web',
-            "password" => bcrypt('Slash830M'),
+            "password" => bcrypt('Test1234'),
             "email" => "develop@eyeweb.co.uk",
         ]);
     }
