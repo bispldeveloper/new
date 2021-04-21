@@ -161,10 +161,10 @@ class ModuleServiceProvider extends ServiceProvider
     public function setModules()
     {
         // get the modules
-        $coreModules = $this->getModules(base_path('vendor/eyeweb/eyecore/src/Modules'));
+        $coreModules = $this->getModules(base_path('vendor' . DIRECTORY_SEPARATOR . 'eyeweb' . DIRECTORY_SEPARATOR . 'eyecore' . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'Modules'));
 
         // get package modules
-        $packageFiles = File::glob(base_path('vendor/eyeweb/*/src/Modules'));
+        $packageFiles = File::glob(base_path('vendor' . DIRECTORY_SEPARATOR . 'eyeweb' . DIRECTORY_SEPARATOR . '*' . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'Modules'));
         foreach($packageFiles as $packageFile) {
             if(Str::contains($packageFile, 'eyecore')) {
                 continue;
@@ -211,24 +211,24 @@ class ModuleServiceProvider extends ServiceProvider
                 $modules[$moduleName]['interface'] = $this->getNamespace($file->getPathname()) . '\\' . pathinfo($file->getRelativePathname(), PATHINFO_FILENAME);
             }
             if(!isset($modules[$moduleName]['routes']['web']) && Str::contains(last($explodedFile), 'Web')) {
-                $modules[$moduleName]['routes']['web'][] = $this->core_path($moduleName . DIRECTORY_SEPARATOR . 'Routes/' . $file->getFilename());
+                $modules[$moduleName]['routes']['web'][] = $this->core_path($moduleName . DIRECTORY_SEPARATOR . 'Routes' . DIRECTORY_SEPARATOR . $file->getFilename());
                 $modules[$moduleName]['routes']['web'][] = $this->package_path($file->getPathName());
-                $modules[$moduleName]['routes']['web'][] = $this->custom_path($moduleName . DIRECTORY_SEPARATOR . 'Routes/' . $file->getFilename());
+                $modules[$moduleName]['routes']['web'][] = $this->custom_path($moduleName . DIRECTORY_SEPARATOR . 'Routes' . DIRECTORY_SEPARATOR . $file->getFilename());
             }
             if(!isset($modules[$moduleName]['routes']['api']) && Str::contains(last($explodedFile), 'Api')) {
-                $modules[$moduleName]['routes']['api'][] = $this->core_path($moduleName . DIRECTORY_SEPARATOR . 'Routes/' . $file->getFilename());
+                $modules[$moduleName]['routes']['api'][] = $this->core_path($moduleName . DIRECTORY_SEPARATOR . 'Routes' . DIRECTORY_SEPARATOR . $file->getFilename());
                 $modules[$moduleName]['routes']['api'][] = $this->package_path($file->getPathName());
-                $modules[$moduleName]['routes']['api'][] = $this->custom_path($moduleName . DIRECTORY_SEPARATOR . 'Routes/' . $file->getFilename());
+                $modules[$moduleName]['routes']['api'][] = $this->custom_path($moduleName . DIRECTORY_SEPARATOR . 'Routes' . DIRECTORY_SEPARATOR . $file->getFilename());
             }
-            if(!isset($modules[$moduleName]['views']) && is_dir($directory . DIRECTORY_SEPARATOR . $moduleName . DIRECTORY_SEPARATOR . 'Resources/Views')) {
-                $modules[$moduleName]['views'][] = $this->custom_path($moduleName . DIRECTORY_SEPARATOR . 'Resources/Views');
-                $modules[$moduleName]['views'][] = $directory . DIRECTORY_SEPARATOR . $moduleName . DIRECTORY_SEPARATOR . 'Resources/Views';
-                $modules[$moduleName]['views'][] = $this->core_path($moduleName . DIRECTORY_SEPARATOR . 'Resources/Views');
+            if(!isset($modules[$moduleName]['views']) && is_dir($directory . DIRECTORY_SEPARATOR . $moduleName . DIRECTORY_SEPARATOR . 'Resources' . DIRECTORY_SEPARATOR . 'Views')) {
+                $modules[$moduleName]['views'][] = $this->custom_path($moduleName . DIRECTORY_SEPARATOR . 'Resources' . DIRECTORY_SEPARATOR . 'Views');
+                $modules[$moduleName]['views'][] = $directory . DIRECTORY_SEPARATOR . $moduleName . DIRECTORY_SEPARATOR . 'Resources' . DIRECTORY_SEPARATOR . 'Views';
+                $modules[$moduleName]['views'][] = $this->core_path($moduleName . DIRECTORY_SEPARATOR . 'Resources' . DIRECTORY_SEPARATOR . 'Views');
             }
             if(!isset($modules[$moduleName]['migrations'])) {
-                $modules[$moduleName]['migrations'][] = $this->core_path($moduleName . DIRECTORY_SEPARATOR . 'Database/Migrations');
-                $modules[$moduleName]['migrations'][] = $directory . DIRECTORY_SEPARATOR . $moduleName . DIRECTORY_SEPARATOR . 'Database/Migrations';
-                $modules[$moduleName]['migrations'][] = $this->custom_path($moduleName . DIRECTORY_SEPARATOR . 'Database/Migrations');
+                $modules[$moduleName]['migrations'][] = $this->core_path($moduleName . DIRECTORY_SEPARATOR . 'Database' . DIRECTORY_SEPARATOR . 'Migrations');
+                $modules[$moduleName]['migrations'][] = $directory . DIRECTORY_SEPARATOR . $moduleName . DIRECTORY_SEPARATOR . 'Database' . DIRECTORY_SEPARATOR . 'Migrations';
+                $modules[$moduleName]['migrations'][] = $this->custom_path($moduleName . DIRECTORY_SEPARATOR . 'Database' . DIRECTORY_SEPARATOR . 'Migrations');
             }
         }
 
@@ -262,7 +262,7 @@ class ModuleServiceProvider extends ServiceProvider
      */
     public function core_path($dir)
     {
-        return base_path('vendor/eyeweb/eyecore/src/Modules/' . $dir);
+        return base_path('vendor' . DIRECTORY_SEPARATOR . 'eyeweb' . DIRECTORY_SEPARATOR . 'eyecore' . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'Modules' . DIRECTORY_SEPARATOR . $dir);
     }
 
     /**
@@ -277,7 +277,7 @@ class ModuleServiceProvider extends ServiceProvider
                 return base_path('vendor' . $explodeDir[1]);
             }
         }
-        return base_path('vendor/eyeweb/' . $dir);
+        return base_path('vendor' . DIRECTORY_SEPARATOR . 'eyeweb' . DIRECTORY_SEPARATOR . $dir);
     }
 
     /**
@@ -286,6 +286,6 @@ class ModuleServiceProvider extends ServiceProvider
      */
     public function custom_path($dir)
     {
-        return base_path('modules/' . $dir);
+        return base_path('modules' . DIRECTORY_SEPARATOR . $dir);
     }
 }
