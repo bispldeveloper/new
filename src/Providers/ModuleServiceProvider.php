@@ -202,7 +202,7 @@ class ModuleServiceProvider extends ServiceProvider
         // create an array of module and their repositories/interfaces
         // e.g. ['Module' => ['repository' => FILEPATH, 'interface' => FILEPATH]]
         foreach($files as $file) {
-            $explodedFile = explode('/', $file->getRelativePathname());
+            $explodedFile = explode(DIRECTORY_SEPARATOR, $file->getRelativePathname());
             $moduleName = $explodedFile[0];
             if(!isset($modules[$moduleName]['repository']) && Str::contains(last($explodedFile), 'Repository')) {
                 $modules[$moduleName]['repository'] = $this->getNamespace($file->getPathname()) . '\\' . pathinfo($file->getRelativePathname(), PATHINFO_FILENAME);
